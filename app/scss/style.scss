@@ -1,13 +1,12 @@
-//nullstile
-@import "_nullstyle";
-//nullstile
-
+//partials
+@import "nullstyle";
+@import "global";
+@import "vars";
+//partials
 
 //fonts
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap");
 //fonts
-
-
 
 //wrapper
 .wrapper {
@@ -18,20 +17,106 @@
 //wrapper
 
 //variables
-$mw:1px;
+$mw: 1170px;
 $md1: $mw;
 $md2: 992.98px;
 $md3: 767.98px;
 $md4: 479.98px;
+
+$latosemibold: "Lato-Semibold";
+$roboto: "Roboto", sans-serif;
+$raleway: "Raleway", sans-serif;
+$opensans: "Open Sans", sans-serif;
 //variables
 
 //container
-.container{
-	max-width:$mw;
+.container {
+	max-width: $mw;
 	margin: 0 auto;
 	width: 100%;
-	@media (max-width:$md1){max-width: 970px;}
-	@media (max-width:$md2){max-width: 750px;}
-	@media (max-width:$md3) {max-width: none; padding: 0 10px;}
+	@media (max-width: $md1) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3) {
+		max-width: none;
+		padding: 0 10px;
+	}
 }
 //container
+
+body {
+	font-family: $roboto;
+}
+.header {
+}
+.header__top {
+}
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+	height: 90px;
+	align-items: center;
+}
+.header__logo {
+}
+.logo {
+}
+.header__items {
+}
+.header__text {
+	margin: 0 0 0 auto;
+	font-size: 15px;
+	line-height: 24px;
+	color: #546e7a;
+	a {
+		color: #e74c3c;
+	}
+	span a {
+		color: #546e7a;
+	}
+}
+.header__box {
+	
+}
+.header__btn {
+	padding: 9px;
+	width: 72px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: #ffffff;
+	display: inline-block;
+	text-align: center;
+}
+.header__btn_login {
+	background-color: $green;
+}
+.header__btn_register {
+	background-color: $red;
+	margin: 0 0 0 7px;
+}
+.market {
+}
+
+.header__bottom {
+	background-color: #263238;
+	
+}
+.menu {
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+.menu__list {
+	li {
+		display: inline-block;
+		margin: 0 30px 0 0;
+		a {
+			font-weight: 500;
+			line-height: 30px;
+			color: #fff;
+		}
+	}
+}
