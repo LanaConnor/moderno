@@ -1,0 +1,10 @@
+@mixin font($f, $sz, $w, $lh, $c){
+	font-family: $f;
+	font-size: $sz;
+	font-weight:$w ;
+	line-height: $lh;
+	color: $c;
+	
+};
+$green: #8bc34a;
+$red: #e74c3c;
