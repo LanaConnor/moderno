@@ -11,28 +11,31 @@ gulp.task('sass', function () {
 	return gulp.src('app/scss/**/*.scss')
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(autoprefixer({overrideBrowserslist: ['last 8 versions']}))
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 8 versions'] }))
 		.pipe(gulp.dest('app/css'))
 		.pipe(browserSync.reload({ stream: true }))
 });
-gulp.task('script', function(){
+gulp.task('script', function () {
 	return gulp.src([
 		'node_modules/slick-carousel/slick/slick.js',
-		'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+		'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+		'node_modules/mixitup/dist/mixitup.js',
+		'node_modules/rateyo/jquery.rateyo.js'
 	])
-	.pipe(concat('libs.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest('app/js'))
+		.pipe(concat('libs.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('app/js'))
 });
 
-gulp.task('style', function(){
+gulp.task('style', function () {
 	return gulp.src([
 		'node_modules/slick-carousel/slick/slick.css',
-		'node_modules/magnific-popup/dist/magnific-popup.css'
+		'node_modules/magnific-popup/dist/magnific-popup.css',
+		'node_modules/rateyo/jquery.rateyo.css'
 	])
-	.pipe(concat('libs.min.css'))
-	.pipe(cssmin())
-	.pipe(gulp.dest('app/css'))
+		.pipe(concat('libs.min.css'))
+		.pipe(cssmin())
+		.pipe(gulp.dest('app/css'))
 });
 
 gulp.task('html', function () {
@@ -42,6 +45,13 @@ gulp.task('html', function () {
 gulp.task('js', function () {
 	return gulp.src('app/js/*.js')
 		.pipe(browserSync.reload({ stream: true }))
+});
+gulp.task('minjs', function () {
+	return gulp.src('app/js/script.js')
+		.pipe(uglify())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(gulp.dest('app/js'))
+
 });
 
 gulp.task('watch', function () {
@@ -58,4 +68,4 @@ gulp.task('browser-sync', function () {
 	});
 });
 
-gulp.task('default', gulp.parallel('sass','script', 'style', 'watch', 'browser-sync' ));
+gulp.task('default', gulp.parallel('sass', 'minjs', 'script', 'style', 'watch', 'browser-sync'));
