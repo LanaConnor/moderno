@@ -441,13 +441,45 @@
 		line-height: 36px;
 		font-weight: 400;
 		color: #263238;
-		transition: all .4s;
-		&:hover{
+		transition: all 0.4s;
+		&:hover {
 			font-size: 24px;
 			font-weight: 700;
-
 		}
 	}
 }
-
 //end author
+//start tutorials
+.tutorials {
+	padding: 65px 0 120px 0;
+	&__title {
+		margin: 0 0 55px 0;
+		text-align: center;
+	}
+}
+.tutorials__box {
+	display: flex;
+	margin: 0 -15px;
+	justify-content: center;
+}
+.tutorials__item {
+	flex: 0 1 33%;
+	padding: 0 15px;
+	max-width: 370px;
+	&-image {
+		img {
+			width: 100%;
+		}
+	}
+	&-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 24px;
+		background-color: #f8f8f8;
+		min-height: 100px;
+		padding: 10px;
+	}
+}
+
+//end tutorials
