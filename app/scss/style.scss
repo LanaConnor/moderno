@@ -404,3 +404,50 @@
 	font-weight: 400;
 	color: #b0bec5;
 }
+//end advantages
+//start author
+.author {
+	background: center no-repeat;
+	background-size: cover;
+	min-height: 750px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__box {
+		background-color: $green;
+		max-width: 653px;
+		width: 100%;
+		min-height: 216px;
+		padding: 15px 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__title {
+		font-size: 30px;
+		line-height: 36px;
+		font-weight: 400;
+		color: #ffffff;
+		max-width: 265px;
+		margin: 0 50px 0 0;
+		span {
+			font-weight: 700;
+		}
+	}
+	&__btn {
+		padding: 14px 43px;
+		background-color: #fff;
+		font-size: 18px;
+		line-height: 36px;
+		font-weight: 400;
+		color: #263238;
+		transition: all .4s;
+		&:hover{
+			font-size: 24px;
+			font-weight: 700;
+
+		}
+	}
+}
+
+//end author
