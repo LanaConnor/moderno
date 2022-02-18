@@ -16,6 +16,11 @@
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	flex: 1 1 auto;
 }
 //wrapper
 
@@ -40,8 +45,11 @@
 .header__inner {
 	display: flex;
 	justify-content: space-between;
-	height: 90px;
+	height: 70px;
 	align-items: center;
+	@media (max-width: $md4) {
+		position: relative;
+	}
 }
 
 .header__text {
@@ -56,11 +64,59 @@
 	span a {
 		color: #546e7a;
 	}
+	@media (max-width: $md2) {
+		display: none;
+	}
 }
 .header__box {
 	display: flex;
 	align-items: center;
+	@media (max-width: $md4) {
+		position: absolute;
+		left: 100%;
+		transition: all 0.5s;
+		background-color: #fff;
+		height:70px;
+	}
 }
+@media (max-width: $md4) {
+	.active{
+		left:7%;
+		right:0;
+	}
+}
+.header__logo{
+@media (max-width: $md4){
+	margin: 0 0 0 50px;
+}
+}
+
+
+@media (max-width: $md4) {
+	.header__btn-menu {
+		width: 70px;
+		height: 70px;
+		background-color: $black;
+		position: relative;
+		text-align: center;
+		top: 0;
+		right: -10px;
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 36px;
+			color: #fff;
+		}
+	}
+}
+@media (min-width: $md4) {
+	.header__btn-menu {
+		display: none !important;
+	}
+}
+
 .header__btn {
 	padding: 9px;
 	width: 72px;
@@ -69,6 +125,8 @@
 	color: #ffffff;
 	display: inline-block;
 	text-align: center;
+	margin: 0 0 0 15px;
+	
 }
 .header__btn_login {
 	background-color: $green;
@@ -102,7 +160,7 @@
 		position: relative;
 		&::before {
 			position: absolute;
-			top: 28px;
+			top: 18px;
 			right: 30px;
 			font-size: 16px;
 			font-weight: 400;
@@ -139,6 +197,9 @@
 			font-family: $roboto;
 		}
 	}
+	@media (max-width: $md3) {
+		display: none;
+	}
 }
 
 .message {
@@ -163,7 +224,6 @@
 		}
 		.circle__item {
 			padding: 20px;
-
 		}
 	}
 }
@@ -174,18 +234,20 @@
 	&:hover {
 		color: #263238;
 	}
+	margin: 0 15px 0 0;
 }
 .circle__menu {
 	overflow: auto;
 	height: 0;
-	top: 63px;
-	right: -10px;
+	top: 53px;
+	left: 0px;
 	position: absolute;
 	width: 268px;
 	border: 0 solid #cccccc;
 	box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
 	background-color: #fff;
 	transition: all 0.7s;
+	z-index: 5;
 }
 .circle__item {
 	display: flex;
@@ -303,11 +365,16 @@
 	margin: 0 25px 0 20px;
 	padding: 0 20px 0 0;
 	position: relative;
+	@media (max-width: $md4) {
+		padding:0 5px 0 0;
+		margin: 0 10px 0 20px;	
+	}
 	&::before {
 		font-family: "icomoon";
 		content: "\f107";
 		position: absolute;
-		top: 0;
+		top: 50%;
+		transform: translateY(-50%);
 		right: 0;
 		font-size: 16px;
 		line-height: 24px;
@@ -324,9 +391,15 @@
 		height: 34px;
 		overflow: hidden;
 		border-radius: 50%;
+		@media (max-width: $md4) {
+			margin: 7px 15px 0 0;
+		}
 	}
 	&__info {
 		line-height: 24px;
+		@media (max-width: $md4) {
+			display: none;
+		}
 	}
 	&__name {
 		color: #222222;
@@ -358,9 +431,10 @@
 	background-color: #fff;
 	padding: 0 20px;
 	position: absolute;
-	top: 70px;
+	top: 60px;
 	left: 50%;
 	transform: translateX(-50%);
+	z-index: 5;
 	ul {
 		li {
 			a {
@@ -382,16 +456,79 @@
 	height: 60px;
 	display: flex;
 	align-items: center;
+	@media (max-width: $md2) {
+		position: relative;
+	}
+	@media (max-width: $md4) {
+		height:0;
+	}
+}
+@media (max-width: $md3) {
+	.menu__burger {
+		width: 30px;
+		display: block;
+		position: absolute;
+		
+		div {
+			background-color: #fff;
+			height: 3px;
+			border-radius: 3px;
+			@media (max-width: $md4){
+				background-color: $black;
+			}
+			& + div {
+				margin: 5px 0px 0px 0px;
+			}
+		}
+		@media (max-width: $md4){
+			top: -45px;
+		}
+	}
 }
 .menu__list {
 	li {
 		display: inline-block;
 		margin: 0 30px 0 0;
+		@media (max-width: $md2) {
+			margin: 0px 25px 0px 0px;
+		}
 		a {
 			font-weight: 500;
 			line-height: 30px;
 			color: #fff;
 		}
+	}
+	@media (max-width: $md3) {
+		display: none;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		right: 0;
+		background-color: $black;
+		z-index: 5;
+		text-align: center;
+		widht: 100%;
+		margin: 0 -10px;
+		li {
+			display: block;
+			padding: 10px 0;
+			border-top: 1px solid $green;
+			margin: 0;
+			&:last-child {
+				border-bottom: 1px solid $green;
+			}
+			a {
+				display: block;
+				font-size: 16px;
+				font-weight: 700;
+			}
+		}
+	}
+	@media (min-width: $md3) {
+		display: block !important;
+	}
+	@media (max-width: $md4){
+		top: 0px;
 	}
 }
 //end-header========================================================================================================================================
@@ -780,22 +917,39 @@
 
 .footer__top {
 	padding: 116px 0 100px 0;
+	@media (max-width: $md1) {
+		padding: 30px 0;
+	}
 }
 .footer__inner {
 	display: flex;
 	justify-content: space-between;
 	.footer__about {
 		max-width: 270px;
+		@media (max-width: $md1) {
+			min-width: 100%;
+			margin: 0 0 10px 0;
+			border-bottom: 1px solid $green;
+			padding: 0 0 10px 0;
+		}
 	}
 	.footer__menu {
 		max-width: 220px;
 	}
 	.footer__follow {
 		max-width: 260px;
+		@media (max-width: $md2) {
+			min-width: 100%;
+			padding: 10px 0 0 0;
+			border-top: 1px solid $green;
+		}
+	}
+	@media (max-width: $md1) {
+		flex-wrap: wrap;
 	}
 }
 .footer__item {
-	flex: 1 0 25%;
+	flex: 0 1 25%;
 }
 .footer__title {
 	font-family: $raleway;
@@ -815,6 +969,11 @@
 		bottom: 0;
 		left: 2px;
 	}
+	@media (max-width: $md1) {
+		margin: 0 0 15px 0;
+		padding: 0 0 15px 0;
+		font-size: 20px;
+	}
 }
 
 .footer__text {
@@ -822,6 +981,9 @@
 	font-weight: 400;
 	color: #b7c3c8;
 	margin: 0 0 35px 0;
+	@media (max-width: $md1) {
+		margin: 0 0 15px 0;
+	}
 }
 .footer__info {
 	font-family: $latosemibold;
@@ -862,6 +1024,20 @@
 }
 
 .footer__menu {
+	max-width: 220px;
+	@media (max-width: $md2) {
+		flex: 1 1 50%;
+		max-width: 50%;
+	}
+	& + .footer__menu {
+		@media (max-width: $md3) {
+			border-top: 1px solid $green;
+			padding: 10px 0 0 0;
+		}
+	}
+	@media (max-width: $md3) {
+		min-width: 100%;
+	}
 	.footer__list {
 		font-size: 15px;
 		line-height: 22px;
@@ -879,6 +1055,9 @@
 .footer__follow {
 	.footer__social {
 		margin: 0 0 40px 0;
+		@media (max-width: $md3) {
+			margin: 0 0 20px 0;
+		}
 		li {
 			display: inline-block;
 			& + li {
@@ -908,6 +1087,7 @@
 
 .footer__form {
 	position: relative;
+	max-width: 400px;
 	&-title {
 		font-size: 20px;
 		line-height: 26px;
@@ -952,6 +1132,9 @@
 .footer__bottom {
 	border-top: 1px solid #424d53;
 	padding: 27px 0 32px 0;
+	@media (max-width: $md3) {
+		padding: 20px 0;
+	}
 }
 .footer__copy {
 	text-align: center;
@@ -961,3 +1144,5 @@
 	color: #919699;
 }
 //end footer==========================================================================================================================
+
+@import "media";
