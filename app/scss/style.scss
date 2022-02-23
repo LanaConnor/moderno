@@ -1644,7 +1644,7 @@
 		}
 	}
 }
-.aside-information__box{
+.aside-information__box {
 	padding: 25px 0 0;
 }
 .aside-information__line {
@@ -1660,8 +1660,244 @@
 		color: #263238;
 		margin: 0px 4px 0px 0px;
 	}
-	& + .aside-information__line{
+	& + .aside-information__line {
 		margin: 17px 0px 0px 0px;
 	}
 }
 //end product-one
+//start page-404
+.page-404__wrapper,
+.about__wrapper,
+.contact__wrapper {
+	border: 1px solid #dcdcdc;
+	background-color: #fff;
+}
+.page-404__head,
+.about__head,
+.contact__head {
+	font-size: 24px;
+	color: #444;
+	padding: 23px 27px;
+	border-bottom: 1px solid #dcdcdc;
+	font-weight: 600;
+}
+.page-404 {
+	padding: 0px 0px 150px 0px;
+	background-color: #f4f6f5;
+
+	&__inner {
+		text-align: center;
+		background-color: $green;
+		color: #fff;
+		padding: 90px 0;
+	}
+
+	&__404 {
+		font-weight: 800;
+		font-family: $opensans;
+		font-size: 300px;
+		position: relative;
+		line-height: 250px;
+		margin: 0px 0px 15px 0px;
+		&::after {
+			content: "";
+			position: absolute;
+			background-image: url(../images/page-404/page-404-image.png);
+			width: 152px;
+			height: 292px;
+			margin: 0px 0px 0px 15px;
+		}
+	}
+	&__title {
+		font-weight: 300;
+		margin: 0px 0px 30px 0px;
+		font-size: 30px;
+		font-family: $opensans;
+		letter-spacing: 0.2em;
+	}
+	&__text {
+		max-width: 501px;
+		font-size: 18px;
+		margin: 0px auto 60px;
+		font-family: $raleway;
+		line-height: 24px;
+	}
+	&__link {
+		font-family: $raleway;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		padding: 20px 30px 16px;
+		border: 1px solid #fff;
+		color: #fff;
+		border-radius: 4px;
+	}
+}
+
+//end page-404
+//start about
+.about {
+	padding: 0px 0px 150px 0px;
+	background-color: #f4f6f5;
+	&__inner {
+		background-color: #fff;
+		padding: 40px 50px 50px;
+	}
+	.about__box + .about__box {
+		margin: 55px 0px 0px 0px;
+	}
+	h3 {
+		font-weight: 700;
+		font-size: 20px;
+		color: #444;
+		margin: 0px 0px 21px 0px;
+	}
+	p {
+		max-width: 1050px;
+		font-weight: 400;
+		font-size: 15px;
+		color: #707070;
+		line-height: 24px;
+	}
+}
+//end about
+//start contact
+.contact {
+	padding: 0px 0px 150px 0px;
+	background-color: #f4f6f5;
+}
+.contact__wrapper {
+}
+.contact__head {
+	padding: 23px 40px;
+}
+.contact__inner {
+	padding: 35px 40px 15px;
+}
+.contact__map {
+	margin: 0px 0px 50px 0px;
+
+	iframe {
+		width: 100%;
+		min-height: 415px;
+	}
+}
+.contact__box {
+	display: flex;
+	justify-content: space-between;
+}
+.contact__info {
+	flex: 0 1 50%;
+	max-width: 270px;
+}
+.contact__info-item {
+	padding: 0 0 0 40px;
+	position: relative;
+	& + .contact__info-item {
+		margin: 25px 0px 0px 0px;
+	}
+	&::before {
+		position: absolute;
+		font-size: 24px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #8bc34a;
+		left: 0;
+	}
+}
+.contact__info-title {
+	font-family: $roboto;
+	font-size: 20px;
+	line-height: 24px;
+	color: #263238;
+	font-weight: 600;
+	padding: 0 0 20px;
+	position: relative;
+	margin: 0px 0px 21px 0px;
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 44px;
+		height: 4px;
+		background-color: #8bc34a;
+	}
+}
+.contact__info-content {
+	font-family: $roboto;
+	font-size: 15px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #707070;
+}
+.contact__form {
+	.contact__form-title {
+		font-size: 24px;
+		color: #333;
+		margin: 0px 0px 23px 0px;
+		font-weight: 600;
+	}
+	form {
+	}
+	.contact__form-row {
+		display: flex;
+	}
+	input {
+		flex: 0 1 50%;
+		font-size: 15px;
+		font-weight: 400;
+		color: #7a7a7a;
+		width: 351px;
+		height: 43px;
+		background-color: #f1f4f5;
+		padding: 0 20px;
+		margin: 0px 0px 28px 0px;
+		&:focus {
+			border: 1px solid #7a7a7a;
+		}
+		& + input {
+			margin: 0px 0px 0px 25px;
+		}
+		&::placeholder {
+			color: #7a7a7a;
+			font-size: 15px;
+			font-weight: 400;
+		}
+	}
+	textarea {
+		font-family: $roboto;
+		padding: 18px 16px;
+		font-size: 15px;
+		line-height: 24px;
+		color: #7a7a7a;
+		background-color: #f1f4f5;
+		width: 100%;
+		min-height: 193px;
+		margin: 0px 0px 22px 0px;
+		resize: none;
+		&::placeholder {
+			color: #7a7a7a;
+		}
+		&:focus {
+			border: 1px solid #7a7a7a;
+		}
+	}
+	button {
+		font-family: $roboto;
+		font-size: 16px;
+		font-weight: 700;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
+		max-width: 190px;
+		height: 54px;
+		background-color: #8bc34a;
+		padding: 0 30px;
+	}
+}
+
+//end contact
+//start settings
+
+//end settings
