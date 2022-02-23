@@ -35,7 +35,7 @@
 					</div>
 					<div class="header__box">
 						<div class="notification__box">
-							<a href="#" class="notification header__circle active icon-bell-o ">
+							<a href="#" class="notification header__circle icon-bell-o ">
 								<span>8</span>
 							</a>
 							<div class="circle__menu notification_menu">
@@ -66,7 +66,7 @@
 							</div>
 						</div>
 						<div class="message__box">
-							<a href="#" class="message header__circle active icon-envelope-o ">
+							<a href="#" class="message header__circle icon-envelope-o ">
 								<span>5</span>
 							</a>
 							<div class=" circle__menu message_menu">
@@ -159,7 +159,8 @@
 								</ul>
 							</div>
 						</div>
-						<a href="#" class="header__btn header__btn_login ">Login</a>
+						<a href="javascript:;" class="header__btn header__btn_login " data-fancybox
+							data-src="#login">Login</a>
 						<a href="#" class="header__btn header__btn_logout header__btn_login--off">Logout</a>
 						<a href="#" class="header__btn header__btn_register ">Register</a>
 					</div>
@@ -190,7 +191,7 @@
 				</div>
 			</div>
 		</header>
-		<section class="search" style="background-image: url(../images/search/bg.jpg)">
+		<section class="search" style="background-image: url(images/search/bg.jpg)">
 			<div class="container">
 				<div class="search__inner">
 					<div class="search__inner-title">Welcome To Foxtar Market Place!</div>
@@ -941,7 +942,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="author" style="background-image: url(../images/author/author-bg.jpg);">
+		<section class="author" style="background-image: url(images/author/author-bg.jpg);">
 			<div class="author__box">
 				<div class="author__title">Over <span>20,000</span> Author
 					Are Involved Here! </div>
@@ -1035,6 +1036,22 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div id="login">
+		<div class="login__title ">Login</div>
+		<form>
+			<label class="login__label_user">
+				<input type="text" placeholder="Name" required>
+			</label>
+
+			<label class="login__label_pass">
+				<input type="text" placeholder="Password" required>
+			</label>
+
+			<button type="submit" class="login__btn">Submit</button>
+			<a href="#" class="login__account icon-pencil-square-o">Creat An Account?</a>
+			<a href="#">Lost Password?</a>
+		</form>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
