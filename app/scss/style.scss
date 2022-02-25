@@ -2145,9 +2145,8 @@
 	.active.tab::before {
 		color: $green;
 	}
-	
 }
-.profile__tab{
+.profile__tab {
 	background-color: #fff;
 	padding: 45px;
 	border: 1px solid #d7d7d7;
@@ -2190,7 +2189,7 @@
 	height: 15px;
 	background-color: #f4f4f4;
 	border-radius: 4px;
-	span{
+	span {
 		background-image: url(../images/profile/pro-bar.jpg);
 		display: block;
 		height: 15px;
@@ -2198,3 +2197,196 @@
 	}
 }
 //end profile
+//start upload
+.upload {
+	background-color: #f4f6f5;
+	padding: 0 0 100px 0;
+}
+
+.upload__inner {
+	background-color: #fff;
+	border: 1px solid #d7d7d7;
+}
+.upload__item {
+	& + .upload__item {
+		margin: 70px 0px 0px 0px;
+	}
+}
+.upload__title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #263238;
+	padding: 21px 34px;
+	border-bottom: 1px solid #d7d7d7;
+	margin: 0px 0px 40px 0px;
+}
+.upload__content {
+	padding: 0 50px 0 45px;
+}
+.upload__line {
+	display: flex;
+	margin: 0px 0px 20px 0px;
+	label {
+		max-width: 170px;
+		flex: 0 1 16%;
+		padding: 0 15px 0 0;
+		font-size: 15px;
+		color: #444444;
+		margin: 5px 0px 0px 0px;
+		font-weight: 500;
+		span {
+			color: $green;
+			font-size: 24px;
+		}
+	}
+	textarea,
+	input {
+		border: 1px solid #d7d7d7;
+		max-width: 900px;
+		flex: 0 1 84%;
+		display: block;
+		height: 40px;
+		background-color: #f9f9f9;
+		padding: 8px 18px;
+		font-family: "Myriad Pro" sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+
+		&::placeholder {
+			font-weight: 400;
+			color: #707070;
+		}
+		&:focus {
+			border: 0px solid $green;
+		}
+	}
+	.jq-file {
+		max-width: 900px;
+		flex: 0 1 84%;
+		border-radius: 0px;
+		box-shadow: none;
+		border: 1px solid #d7d7d7;
+		height: 40px;
+		&.focused .jq-file__name{
+			border: 0px solid $green;
+		} 
+	}
+	.jq-file__name {
+		box-sizing: border-box;
+		width: 100%;
+		height: 40px;
+		padding: 0 80px 0 112px;
+		border: 0px solid #ccc;
+		border-bottom-color: #b3b3b3;
+		border-radius: 0;
+		background: #f9f9f9;
+		box-shadow: none;
+		font-family: $roboto;
+		font-size: 13px;
+		line-height: 40px;
+		font-weight: 400;
+		color: #707070;
+	}
+	.jq-file input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: auto;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+		font-size: 100px;
+		line-height: 1em;
+		cursor: pointer;
+  }
+	.jq-file__browse {
+		cursor: pointer;
+		top: 8px;
+		left: 9px;
+		right: auto;
+		text-align: center;
+		padding: 0 12px;
+		width: 89px;
+		height: 26px;
+		border: 1px solid #d7d7d7;
+		border-left: 1px solid #d7d7d7;
+		border-radius: 0;
+		background: #fff;
+		box-shadow: none;
+		text-shadow: none;
+		font-family: $roboto;
+		font-size: 13px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #444444;
+	}
+	.jq-selectbox__select {
+		height: 40px;
+		padding: 8px 18px;
+		border: 1px solid #d7d7d7;
+		border-bottom-color: #d7d7d7;
+		border-radius: none;
+		background: #f9f9f9;
+		box-shadow: none;
+		font-size: 15px;
+		font-weight: 400;
+		color: #707070;
+		text-shadow: 1px 1px #fff;
+		line-height: 21px;
+	}
+	.jq-selectbox.focused .jq-selectbox__select {
+		border: 1px solid $green;
+	}
+	.jq-selectbox__trigger {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 34px;
+		height: 100%;
+		border-left: none;
+		&::before {
+			font-family: "icomoon";
+			content: "\f107";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 15px;
+			font-weight: 400;
+			color: #444444;
+		}
+	}
+	.jq-selectbox__trigger-arrow {
+		position: absolute;
+		top: 14px;
+		right: 12px;
+		width: 0;
+		height: 0;
+		border-top: 0px solid #999;
+		border-right: 0px solid transparent;
+		border-left: 0px solid transparent;
+	}
+	textarea {
+		resize: none;
+		height: 150px;
+		padding: 8px 18px;
+	}
+	button {
+		font-size: 15px;
+		font-weight: 600;
+		color: #ffffff;
+		width: 124px;
+		height: 46px;
+		background-color: $green;
+		margin: 20px 0px 0px 0px;
+	}
+	.jq-selectbox.jqselect {
+		width: 100%;
+		flex: 0 1 84%;
+		max-width: 900px;
+		&:focus {
+			border: 1px solid $green;
+		}
+	}
+}
+//end upload

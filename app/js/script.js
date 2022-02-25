@@ -12,6 +12,7 @@ $(function () {
 		slidesToScroll: 4,
 
 	});
+	$('input[type="file"], select').styler()
 	$('.menu__burger').on('click', function () {
 		$('.menu__list').slideToggle();
 	});
